@@ -9,7 +9,11 @@ tieneVentajaContra Agua Fuego = True
 tieneVentajaContra Fuego Planta = True
 tieneVentajaContra _ _ = False
 
-data Gimnasio = UnGimnasio {
-    nombre :: String,
-    siguiente :: Destino
-}
+data Pokemon = UnPokemon { 
+  nombre :: String, 
+  tipo :: TipoPokemon
+} deriving (Show, Eq)
+
+data Destino = UnGimnasio { nombreGym:: String, siguiente:: Destino }
+              | UnaLiga { contrincantes:: [Pokemon] } deriving (Show, Eq)
+
